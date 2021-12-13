@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-8 col-md-4 login-form-2 offset-2 offset-md-4">
+            <div class="form-inline md-form mr-auto mb-4">
+                <input class="form-control mr-sm-2" type="text" [(ngModel)]="searchCityName" placeholder="Name of the city" aria-label="Search">
+                <button class="btn btn-info mt-3" (click)="getWeatherForCity()">Search</button>
+            </div>
+            <mat-error *ngIf="errorMessage">
+                <strong>{{errorMessage}}</strong>
+            </mat-error>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8 col-md-4 login-form-2 offset-2 offset-md-4">
+            <mat-card>
+                <mat-card-title *ngIf="currentCity">City: {{currentCity.cityName}} </mat-card-title>
+                <mat-card-content>
+                    <p *ngIf="currentCity">Country: {{currentCity.cityCountry}}</p>
+                  <div>
+                    <img src="https://play-lh.googleusercontent.com/lPfhsMXmCAVrYe3Im-YEuldaIylbh0-ZMxUSf6sd-alEAphC2iGnsaEc3gJGC1LTE1g" width="100%" height="100%">
+                  </div>
+                  <p *ngIf="currentCity">Temperature in Kelvin: {{currentCity.tempK}}</p>
+                  <p *ngIf="currentCity">Temperature in Celsius: {{currentCity.tempC}}</p>
+                  <p *ngIf="currentCity">Weather description: {{currentCity.cityDescription}}</p>
+                </mat-card-content>
+              </mat-card>
+        </div>
+    </div>
+</div>

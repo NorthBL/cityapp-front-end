@@ -1,0 +1,14 @@
+mat-card-actions {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  img {
+    border-radius: 50%;
+  }
+p {
+  font-size: medium;
+  font-weight: bold;
+}
+mat-error {
+  color: red;
+}
